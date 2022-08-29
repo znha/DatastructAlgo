@@ -5,7 +5,6 @@
 function insertInAsortedArray(&$arr, $item)
 {
    
-
 }
 
 //Driver code
