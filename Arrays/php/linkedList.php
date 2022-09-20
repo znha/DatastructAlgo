@@ -138,24 +138,24 @@ class LinkedList
     }
 }
 
-//drivercode
-$firstLinkedList = new LinkedList();
-$firstLinkedList->add(10);
-$firstLinkedList->add(20);
-// var_dump($firstLinkedList);
-// var_dump($firstLinkedList->isEmpty());
-// var_dump($firstLinkedList->size());
-// var_dump($firstLinkedList->search(20));
-// var_dump($firstLinkedList->search(30));
-$firstLinkedList->insert(45, 0);
- var_dump($firstLinkedList);
- var_dump('*****************************************');
-// $firstLinkedList->remove(45);
-// var_dump($firstLinkedList);
+// //drivercode
+// $firstLinkedList = new LinkedList();
+// $firstLinkedList->add(10);
+// $firstLinkedList->add(20);
+// // var_dump($firstLinkedList);
+// // var_dump($firstLinkedList->isEmpty());
+// // var_dump($firstLinkedList->size());
+// // var_dump($firstLinkedList->search(20));
+// // var_dump($firstLinkedList->search(30));
+// $firstLinkedList->insert(45, 0);
+//  var_dump($firstLinkedList);
+//  var_dump('*****************************************');
+// // $firstLinkedList->remove(45);
+// // var_dump($firstLinkedList);
 
-// $firstLinkedList->removeAtIndex(0);
-// var_dump($firstLinkedList);
+// // $firstLinkedList->removeAtIndex(0);
+// // var_dump($firstLinkedList);
 
 
-var_dump($firstLinkedList->nodeAtIndex(2));
+// var_dump($firstLinkedList->nodeAtIndex(2));
 
