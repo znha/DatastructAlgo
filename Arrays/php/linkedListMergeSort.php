@@ -17,6 +17,9 @@ function mergeSortLinkedList($linkedList)
 
 }
 
+//TODO: USE THE MID NODE TO SPLIT WHITHOUT ROUTATING THE ENTIRE LIST
+// TODO : USE THE NODE AT INDEX FUNCTION OF THE LINKED LIST.
+// TODO: USE ADD INSTEAD OF INSERT TO REDUCE TIME COMPLEXITY
 function splitLinkedList($linkedList, $start, $end)
 {
     $position = 0;
