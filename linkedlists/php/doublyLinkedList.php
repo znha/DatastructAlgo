@@ -90,7 +90,11 @@ class DoublyLinkedList
 }
     function remove()
     {
-
+        $lastNode = $this->tail;
+        $prevNode = $lastNode->prev;
+        $prevNode->next = null;
+        $this->tail = $prevNode;
+        return $lastNode;
     }
     function nodeAtIndex($index)
     {
@@ -116,5 +120,5 @@ $doublyLinkedList->append(30);
 // var_dump($doublyLinkedList->search(20));
 // var_dump($doublyLinkedList->search(50));
 // var_dump($doublyLinkedList->search(0));
-
+var_dump($doublyLinkedList->remove());
 print_r($doublyLinkedList);
