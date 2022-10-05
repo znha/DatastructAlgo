@@ -75,19 +75,18 @@ class DoublyLinkedList
     function search($target)
     {
 
-        $current =  $this->head;
-        if( $this->tail->data == $target) {
+        $current = $this->head;
+        if ($this->tail->data == $target) {
             return true;
         }
-        while($current != $this->tail) {
-            if($current->data == $target) {
+        while ($current != $this->tail) {
+            if ($current->data == $target) {
                 return true;
             }
             $current = $current->next;
         }
         return false;
-
-}
+    }
     function remove()
     {
         $lastNode = $this->tail;
@@ -100,10 +99,10 @@ class DoublyLinkedList
     {
         $current = $this->head;
         $count = 0;
-        if($index >= $this->size()) {
+        if ($index >= $this->size()) {
             return null;
         }
-        while($index > $count) {
+        while ($index > $count) {
             $count++;
             $current = $current->next;
         }
@@ -113,7 +112,25 @@ class DoublyLinkedList
 
     function removeAtIndex($index)
     {
-
+        if ($index >= $this->size()) {
+            return null;
+        } else if ($index == $this->size() - 1) {
+            $node = $this->remove();
+            return $node;
+        }
+        else if ($index == 0) { // remove from head
+            $node = $this->head;
+            $newHead = $this->head->next;
+            $newHead->prev = null;
+            $this->head = $newHead;
+            return $node;
+        }
+        $node = $this->nodeAtIndex($index);
+        $prevNode = $node->prev;
+        $nextNode = $node->next;
+        $prevNode->next = $nextNode;
+        $nextNode->prev = $prevNode;
+        return $node;
     }
 }
 
@@ -132,6 +149,7 @@ $doublyLinkedList->append(30);
 // var_dump($doublyLinkedList->search(50));
 // var_dump($doublyLinkedList->search(0));
 // var_dump($doublyLinkedList->remove());
-var_dump($doublyLinkedList->nodeAtIndex(2));
+// var_dump($doublyLinkedList->nodeAtIndex(2));
+// var_dump($doublyLinkedList->removeAtIndex(0));
 
-//print_r($doublyLinkedList);
+print_r($doublyLinkedList);
