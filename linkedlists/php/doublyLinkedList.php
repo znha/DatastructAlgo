@@ -119,10 +119,7 @@ class DoublyLinkedList
             return $node;
         }
         else if ($index == 0) { // remove from head
-            $node = $this->head;
-            $newHead = $this->head->next;
-            $newHead->prev = null;
-            $this->head = $newHead;
+            $node = $this->removeAtHead();
             return $node;
         }
         $node = $this->nodeAtIndex($index);
@@ -130,6 +127,16 @@ class DoublyLinkedList
         $nextNode = $node->next;
         $prevNode->next = $nextNode;
         $nextNode->prev = $prevNode;
+        return $node;
+    }
+
+   
+
+    function removeAtHead() {
+        $node = $this->head;
+        $newHead = $this->head->next;
+        $newHead->prev = null;
+        $this->head = $newHead;
         return $node;
     }
 }
