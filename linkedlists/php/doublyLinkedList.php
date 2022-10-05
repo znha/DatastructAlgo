@@ -19,8 +19,7 @@ class DoublyLinkedList
 
     function __construct()
     {
-        $this->head = null;
-        $this->tail = null;
+        $this->head = $this->tail = null;
     }
 
     function isEmpty()
@@ -48,8 +47,7 @@ class DoublyLinkedList
     {
         $node = new Node($data);
         if ($this->isEmpty()) {
-            $this->head = $node;
-            $this->tail = $node;
+            $this->head = $this->tail = $node;
             return;
         }
 
