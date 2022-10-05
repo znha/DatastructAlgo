@@ -98,6 +98,17 @@ class DoublyLinkedList
     }
     function nodeAtIndex($index)
     {
+        $current = $this->head;
+        $count = 0;
+        if($index >= $this->size()) {
+            return null;
+        }
+        while($index > $count) {
+            $count++;
+            $current = $current->next;
+        }
+        return $current;
+
     }
 
     function removeAtIndex($index)
@@ -120,5 +131,7 @@ $doublyLinkedList->append(30);
 // var_dump($doublyLinkedList->search(20));
 // var_dump($doublyLinkedList->search(50));
 // var_dump($doublyLinkedList->search(0));
-var_dump($doublyLinkedList->remove());
-print_r($doublyLinkedList);
+// var_dump($doublyLinkedList->remove());
+var_dump($doublyLinkedList->nodeAtIndex(2));
+
+//print_r($doublyLinkedList);
