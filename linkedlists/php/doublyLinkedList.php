@@ -30,6 +30,9 @@ class DoublyLinkedList
 
     function size()
     {
+        if(is_null($this->head)) {
+            return 0;
+        }
         $current = $this->head;
         $count = 1;
 
@@ -37,7 +40,7 @@ class DoublyLinkedList
             $count++;
             $current = $current->next;
         }
-
+        
         return $count;
     }
 
@@ -139,6 +142,11 @@ class DoublyLinkedList
         $this->head = $newHead;
         return $node;
     }
+
+    function clear() {
+        $this->head = null;
+        $this->tail = $this->head;
+    }
 }
 
 
@@ -158,5 +166,7 @@ $doublyLinkedList->append(30);
 // var_dump($doublyLinkedList->remove());
 // var_dump($doublyLinkedList->nodeAtIndex(2));
 // var_dump($doublyLinkedList->removeAtIndex(0));
+var_dump($doublyLinkedList->clear());
+var_dump($doublyLinkedList->size());
 
 print_r($doublyLinkedList);
